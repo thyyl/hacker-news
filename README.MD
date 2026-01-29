@@ -1,4 +1,29 @@
-# Hacker News Fetcher (TypeScript)
+# Assignment
+
+## Given three (3) different security flaws with this design and how you can exploit them?
+
+### Internet ALB Can Reach Deep Into Private Workload
+
+- The internet gateway has direct connectivity to internal components like ALB and NAT within the Internet VPC without proper network segmentation or public/private subnet separation.
+- An attacker could potentially bypass the firewall entirely and directly access internal load balancers or the NAT gateway if they're placed in public subnets with public IPs.
+
+### Transit Gateway (TGW) vulnerability
+
+- The Transit Gateway connects both VPCs without apparent network segmentation controls, inspection, or least-privilege routing policies between the networks.
+- If an attacker compromises any resource in either VPC (Internet or Workload VPC), they can use the TGW as a pivot point to laterally move between VPCs.
+
+### No Traffic Inspection Between Tiers in Workload VPC
+
+- The workload VPC shows direct connectivity between web→app→data tiers (NLB→ALB→ECS→Aurora) without any security inspection, segmentation controls, or a firewall protecting critical data resources.
+- Attack onto the web tier (via application vulnerabilities, stolen credentials, or supply chain attacks) can directly access the ECS application layer and the Aurora database.
+
+## If you used LLM, elaborate on how you use them?
+
+- Understand Terraform usage for IaC
+- Understanding infra side of things
+- Generating Terraform boilerplates
+
+# Hacker News Fetcher
 
 Automated fetcher for Hacker News stories that runs on a schedule and stores stories in PostgreSQL.
 
