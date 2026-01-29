@@ -114,23 +114,6 @@ terraform plan
 terraform apply
 ```
 
-## Project Structure
-
-```
-hackernews-fetcher/
-├── src/
-│   ├── index.ts          # Main entry point
-│   ├── config.ts         # Configuration management
-│   ├── database.ts       # Database connection
-│   ├── fetcher.ts        # HN API fetcher
-│   ├── models.ts         # TypeORM entities
-│   └── types.ts          # TypeScript types
-├── Dockerfile
-├── package.json
-├── tsconfig.json
-└── README.md
-```
-
 ## Monitoring
 
 - Check CloudWatch Logs: `/ecs/hackernews-fetcher`
