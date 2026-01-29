@@ -1,0 +1,6 @@
+aws_region         = "ap-southeast-1"
+environment        = "dev"
+instance_type      = "t3.small"
+db_instance_class  = "db.t3.small"
+db_password        = "your-secure-prod-password"
+ecr_repository_url = "12345678.dkr.ecr.ap-southeast-1.amazonaws.com/hackernews-fetcher:latest"
